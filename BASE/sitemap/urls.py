@@ -1,9 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 from . import views as SitemapViews
 
 urlpatterns = [
-    path('', SitemapViews.index),
-    path('sitemap', SitemapViews.sitemap),
-    path('blog', SitemapViews.blog),
-    path('about', SitemapViews.about)
+    path('', SitemapViews.sitemap),
 ]

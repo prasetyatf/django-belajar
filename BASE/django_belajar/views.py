@@ -2,4 +2,8 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(request, 'index.html')
+    context = {
+        'judul':'Home',
+        'created_by':'Tegar'
+    }
+    return render(request, 'index.html', context)

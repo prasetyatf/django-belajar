@@ -2,14 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def index(request):
+def sitemap(request):
     return render(request, 'sitemap/index.html')
 
 def blog(request):
-    return HttpResponse('Ini blog')
+    return render(request, 'blog/index.html')
 
-def about(request):
-    return HttpResponse('Ini About')
 
-def sitemap(request):
-    return HttpResponse('Ini Sitemap')

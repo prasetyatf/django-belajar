@@ -22,5 +22,6 @@ from . import views as IndexViews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexViews.index),
-    path('sitemap/', include('sitemap.urls'))
+    path('sitemap/', include('sitemap.urls')),
+    path('blog/', include('blog.urls'))
 ]
