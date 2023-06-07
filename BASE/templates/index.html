@@ -1,17 +1,51 @@
+<!-- TIPS: selesaikan HTML dulu, baru DTL. Krn prettier ngaco -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Official Tegar Web | {{judul}}</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href={% static "css/style.css" %} />
   </head>
   <body>
-    <h1>HOME</h1>
-    <!-- Perlu Template Tag? -->
-    <ul>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Sitemap</a></li>
-    </ul>
-    <h2>dibuat oleh {{created_by}}</h2>
+    <!-- HEADER -->
+    <nav class="header">
+      <img width="100%" src={% static "/home/header.jpg" %} />
+      <!-- Perlu Template Tag? -->
+    </nav>
+    <!-- NAV BAR MASIH BERMASALAH -->
+    <nav>
+      <ul>
+        {% for link, nama in nav %}
+        <li><a href="{{link}}">{{nama}}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <!-- BODY -->
+    <nav class="container-row">
+      <nav class="item-left">
+        <h2>Contoh Artikel</h2>
+        <h3>dibuat oleh: {{created_by}}</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla veniam
+          consectetur eveniet amet odio fugiat velit saepe consequuntur
+          inventore eius, dolores tempore dolore labore et minus nostrum! Minus,
+          consequatur nihil.
+        </p>
+      </nav>
+      <nav class="item-right">
+        <h1>About</h1>
+        <p>
+          {% for text, desc in about %}
+          {{text}} {{desc}}<br />
+          {% endfor %}
+        </p>
+      </nav>
+    </nav>
+    <nav class="footer">
+      <h1>BUAT FOOTER</h1>
+    </nav>
   </body>
 </html>
